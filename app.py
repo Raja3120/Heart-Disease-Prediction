@@ -49,8 +49,6 @@ def predict():
         input_data_scaled = scaler.fit_transform(input_data)
 
         prediction = model.predict(input_data_scaled)
-        if(age==67 or chol>250):
-            prediction[0]=1
         
         return jsonify({'prediction': int(prediction[0])})
 
